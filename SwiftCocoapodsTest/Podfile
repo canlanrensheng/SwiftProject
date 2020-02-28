@@ -1,0 +1,20 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, ‘8.0’
+
+target ‘SwiftCocoapodsTest’ do
+
+#试图布局
+pod 'SnapKit'
+#网络请求
+pod 'Alamofire', '~> 4.7'
+pod 'Moya'
+#字典转模型
+pod 'HandyJSON'
+pod 'MJRefresh'
+pod 'Kingfisher'
+pod 'SwiftyJSON'
+pod 'DZNEmptyDataSet'
+pod 'WisdomHUD'
+
+
+end

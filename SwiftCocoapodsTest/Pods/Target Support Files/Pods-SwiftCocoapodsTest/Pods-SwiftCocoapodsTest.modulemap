@@ -1,0 +1,6 @@
+module Pods_SwiftCocoapodsTest {
+  umbrella header "Pods-SwiftCocoapodsTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
