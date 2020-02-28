@@ -17,6 +17,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "首页"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "发布", style: UIBarButtonItem.Style.plain, target: self, action: #selector(nextVC))
         self.view.addSubview(self.tableView)
         self.headerRefresh()
         
@@ -29,6 +30,10 @@ class HomeViewController: BaseViewController {
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             self.footerRefresh()
         })
+    }
+    
+    @objc func nextVC() -> Void {
+        
     }
     
     //懒加载数组
