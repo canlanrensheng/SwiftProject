@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13267F17240A18B0006A89EE /* JSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13267F16240A18B0006A89EE /* JSLabel.swift */; };
+		13267F19240A27E9006A89EE /* JSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13267F18240A27E9006A89EE /* JSButton.swift */; };
+		13267F1B240A3014006A89EE /* JSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13267F1A240A3014006A89EE /* JSImageView.swift */; };
 		1351A84D23ED9DD000B0E9F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351A84C23ED9DD000B0E9F6 /* AppDelegate.swift */; };
 		1351A84F23ED9DD000B0E9F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351A84E23ED9DD000B0E9F6 /* ViewController.swift */; };
 		1351A85223ED9DD000B0E9F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1351A85023ED9DD000B0E9F6 /* Main.storyboard */; };
@@ -49,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13267F16240A18B0006A89EE /* JSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSLabel.swift; sourceTree = "<group>"; };
+		13267F18240A27E9006A89EE /* JSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSButton.swift; sourceTree = "<group>"; };
+		13267F1A240A3014006A89EE /* JSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSImageView.swift; sourceTree = "<group>"; };
 		1351A84923ED9DD000B0E9F6 /* SwiftCocoapodsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCocoapodsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1351A84C23ED9DD000B0E9F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1351A84E23ED9DD000B0E9F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +113,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13267F15240A18A0006A89EE /* ViewTool */ = {
+			isa = PBXGroup;
+			children = (
+				13267F16240A18B0006A89EE /* JSLabel.swift */,
+				13267F18240A27E9006A89EE /* JSButton.swift */,
+				13267F1A240A3014006A89EE /* JSImageView.swift */,
+			);
+			path = ViewTool;
+			sourceTree = "<group>";
+		};
 		1351A84023ED9DD000B0E9F6 = {
 			isa = PBXGroup;
 			children = (
@@ -339,7 +355,7 @@
 		13BCCF4C24068B8E00E53E98 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				13BCCF902409421000E53E98 /* ViewTools */,
+				13267F15240A18A0006A89EE /* ViewTool */,
 				13BCCF602406900700E53E98 /* ApiUrl */,
 				13BCCF612406900700E53E98 /* Macros */,
 				13BCCF5324068BDA00E53E98 /* BaseViewController */,
@@ -389,13 +405,6 @@
 				13BCCF7D2407E87900E53E98 /* SwiftCocoapodsTest-Bridging-Header.h */,
 			);
 			path = Macros;
-			sourceTree = "<group>";
-		};
-		13BCCF902409421000E53E98 /* ViewTools */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewTools;
 			sourceTree = "<group>";
 		};
 		4A2519E99DA55D02A068B396 /* Frameworks */ = {
@@ -593,6 +602,7 @@
 			files = (
 				13BCCF5924068C4200E53E98 /* CircleViewController.swift in Sources */,
 				13BCCF5D24068C9900E53E98 /* MessageViewController.swift in Sources */,
+				13267F19240A27E9006A89EE /* JSButton.swift in Sources */,
 				13BCCF5524068BF100E53E98 /* BaseViewController.swift in Sources */,
 				13BCCF712406A55300E53E98 /* HttpTool.swift in Sources */,
 				13BCCF5B24068C6C00E53E98 /* LiveViewController.swift in Sources */,
@@ -603,7 +613,9 @@
 				13BCCF762406B5C900E53E98 /* HomeListModel.swift in Sources */,
 				13BCCF872407F9DB00E53E98 /* SwiftTableViewCell.swift in Sources */,
 				13BCCF5224068B8E00E53E98 /* BaseTabBarViewController.swift in Sources */,
+				13267F1B240A3014006A89EE /* JSImageView.swift in Sources */,
 				13BCCF5724068C1600E53E98 /* HomeViewController.swift in Sources */,
+				13267F17240A18B0006A89EE /* JSLabel.swift in Sources */,
 				13BCCF7E2407E87900E53E98 /* SwiftCocoapodsTest-Bridging-Header.h in Sources */,
 				13BCCF892407FC0F00E53E98 /* Api.swift in Sources */,
 				13BCCF5F24068CBC00E53E98 /* MineViewController.swift in Sources */,

@@ -12,6 +12,8 @@ import Kingfisher
 import WisdomHUD
 import SwiftyJSON
 
+typealias AddNumber = (Int,Int) -> Void
+
 class HomeViewController: BaseViewController {
     var page = 1
     override func viewDidLoad() {
@@ -30,6 +32,17 @@ class HomeViewController: BaseViewController {
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             self.footerRefresh()
         })
+        
+
+        let addBlock : (Int,Int) -> Int = {
+            $0 > $1 ? $0 : $1
+        }
+        let a =  addBlock(2,4)
+        print("获取到的结果是:\(a)")
+        
+        
+        
+        
     }
     
     @objc func nextVC() -> Void {
@@ -110,21 +123,22 @@ extension HomeViewController :UITableViewDataSource{
         cell.selectionStyle = UITableViewCell.SelectionStyle.none;
         if indexPath.row < self.dataArray.count {
             let model : ActivityModel = (self.dataArray[indexPath.row] as? ActivityModel)!
-            cell.nameLabel?.text = model.state
-            cell.contentLabel?.text = model.content
-            cell.iconImageView?.kf.setImage(with: URL(string: model.origin_url), placeholder:nil, options: nil, progressBlock: nil, completionHandler: nil)
+            cell.nameLabel.text = model.state
+            cell.contentLabel.text = model.content
+            cell.iconImageView.kf.setImage(with: URL(string: model.origin_url), placeholder:nil, options: nil, progressBlock: nil, completionHandler: nil)
         }
         return cell
     }
 }
 
-extension HomeViewController :UITableViewDelegate{
+extension HomeViewController :UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
 }
 
-extension HomeViewController :DZNEmptyDataSetSource{
+extension HomeViewController :DZNEmptyDataSetSource {
+    
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let text = "暂无数据"
         let attributes = [NSAttributedString.Key.font: RegularFont(size: 15), NSAttributedString.Key.foregroundColor: TextColor]

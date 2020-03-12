@@ -12,9 +12,26 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
+//        let addIntNum : (Int,Int) -> Int = {
+//            (a : Int,b : Int)-> Int in
+//            return a + b
+//        }
+//        
+//        let _ : (Int,Int) -> Int = {
+//            $0 + $1
+//        }
+//        
+//        addIntNum(2,3)
+//        
+//        let multify : (Int,Int) -> Int = {
+//            (a : Int ,b : Int) -> Int in
+//            return a * 3 + b * 3
+//        }
+//        
+//       let num =  multify(10,8)
+//       print("获取到的结果是:\(num)")
+        
     }
-
-
 }
 
