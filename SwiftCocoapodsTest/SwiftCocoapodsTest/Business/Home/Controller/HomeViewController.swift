@@ -7,19 +7,32 @@
 //
 
 import UIKit
-import HandyJSON
+//import HandyJSON
+
 import Kingfisher
-import WisdomHUD
 import SwiftyJSON
 
 typealias AddNumber = (Int,Int) -> Void
 
 class HomeViewController: BaseViewController {
+    
+    var publishButton : UIButton = {
+        let button = JSButton.createButton(frame: CGRect(x: 0, y: 0, width: 50, height: 30), imageName: "ic_publish") {
+            
+        }
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14.0)
+        button.setTitle("发布", for: UIControl.State.normal)
+        button.setTitleColor(HexColor(rgbValue: 0x333333), for: UIControl.State.normal)
+        button.setButtonWithEdgeInsetsStyle(edgeStyle: ButtonLayoutStyle.ButtonLayoutStyleImagePositionRight, space: 10)
+        return button
+    }()
+    
     var page = 1
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "首页"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "发布", style: UIBarButtonItem.Style.plain, target: self, action: #selector(nextVC))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: self.publishButton)
+        
         self.view.addSubview(self.tableView)
         self.headerRefresh()
         
@@ -39,9 +52,6 @@ class HomeViewController: BaseViewController {
         }
         let a =  addBlock(2,4)
         print("获取到的结果是:\(a)")
-        
-        
-        
         
     }
     
@@ -79,11 +89,13 @@ class HomeViewController: BaseViewController {
     
     @objc func refreshData(page : NSInteger) -> Void {
         if page == 1 {
-            WisdomHUD.showLoading()
+//            WisdomHUD.showLoading()
+            self.showHUD()
         }
         let url = homeList
         HttpTool.shareInstance.requestData(MethodType.get, urlString: url, parameters: ["page" : page as AnyObject], success: { (result) in
-            WisdomHUD.dismiss()
+//            WisdomHUD.dismiss()
+            self.hideHUD()
             self.tableView.mj_header?.endRefreshing()
             let dict = result["data"] as? [String : Any]
 //            let model = HomeListModel.deserialize(from: result as? Dictionary)
@@ -103,6 +115,7 @@ class HomeViewController: BaseViewController {
 //                self.tableView.mj_footer?.endRefreshing()
 //                self.page += 1
 //            }
+//            self.showHUDMessage("加载成功")
             self.tableView.reloadData()
             print(result)
         }) { (NSError) in

@@ -7,9 +7,6 @@
 //
 
 import Foundation
-import UIKit
-import HandyJSON
-import SnapKit
 
 //屏幕宽度
 var KScreenWidth = UIScreen.main.bounds.size.width

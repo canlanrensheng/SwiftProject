@@ -1,0 +1,18 @@
+//
+//  PrefixHeader.pch
+//  SwiftCocoapodsTest
+//
+//  Created by 张金山 on 2020/3/13.
+//  Copyright © 2020 张金山. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//#import <SnapKit/SnapKit-Swift.h>
+//#import <HandyJSON/HandyJSON-Swift.h>
+//#import <Alamofire/Alamofire-Swift.h>
+
+
+
+#endif /* PrefixHeader_pch */

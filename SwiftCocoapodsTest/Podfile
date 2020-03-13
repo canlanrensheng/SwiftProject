@@ -14,7 +14,7 @@ pod 'MJRefresh'
 pod 'Kingfisher'
 pod 'SwiftyJSON'
 pod 'DZNEmptyDataSet'
-pod 'WisdomHUD'
+pod 'MBProgressHUD', '~> 1.1.0'
 
 
 end

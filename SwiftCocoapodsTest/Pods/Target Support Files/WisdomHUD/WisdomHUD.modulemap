@@ -1,6 +1,0 @@
-module WisdomHUD {
-  umbrella header "WisdomHUD-umbrella.h"
-
-  export *
-  module * { export * }
-}

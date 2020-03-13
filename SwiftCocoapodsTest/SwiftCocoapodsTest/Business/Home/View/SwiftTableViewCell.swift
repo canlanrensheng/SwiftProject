@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SnapKit
 
 class SwiftTableViewCell: UITableViewCell {
     
@@ -22,8 +22,8 @@ class SwiftTableViewCell: UITableViewCell {
     }()
     
     var publishButton : UIButton = {
-        return  JSButton.createButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0), title: "发布", titleColor: UIColor.red, font: UIFont.systemFont(ofSize: 14), backgroundColor: UIColor.clear) {
-            print("我被点击了")
+        return JSButton.createButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0), title: "发布", titleColor: UIColor.red, font: UIFont.systemFont(ofSize: 14), backgroundColor: UIColor.clear) {
+             print("我被点击了")
         }
     }()
     

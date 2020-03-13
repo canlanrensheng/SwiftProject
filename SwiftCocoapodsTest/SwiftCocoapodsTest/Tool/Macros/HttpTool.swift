@@ -7,7 +7,9 @@
 //
 
 import UIKit
+
 import Alamofire
+
 struct BaseAPI {
     let testApi = ""
     let NormalAPi = ""

@@ -10,6 +10,8 @@
 		13267F17240A18B0006A89EE /* JSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13267F16240A18B0006A89EE /* JSLabel.swift */; };
 		13267F19240A27E9006A89EE /* JSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13267F18240A27E9006A89EE /* JSButton.swift */; };
 		13267F1B240A3014006A89EE /* JSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13267F1A240A3014006A89EE /* JSImageView.swift */; };
+		13371E8F241B91EA0017CD62 /* UIView+MBPHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 13371E8B241B91EA0017CD62 /* UIView+MBPHUD.m */; };
+		13371E90241B91EA0017CD62 /* UIViewController+MBPHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 13371E8C241B91EA0017CD62 /* UIViewController+MBPHUD.m */; };
 		1351A84D23ED9DD000B0E9F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351A84C23ED9DD000B0E9F6 /* AppDelegate.swift */; };
 		1351A84F23ED9DD000B0E9F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351A84E23ED9DD000B0E9F6 /* ViewController.swift */; };
 		1351A85223ED9DD000B0E9F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1351A85023ED9DD000B0E9F6 /* Main.storyboard */; };
@@ -55,6 +57,11 @@
 		13267F16240A18B0006A89EE /* JSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSLabel.swift; sourceTree = "<group>"; };
 		13267F18240A27E9006A89EE /* JSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSButton.swift; sourceTree = "<group>"; };
 		13267F1A240A3014006A89EE /* JSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSImageView.swift; sourceTree = "<group>"; };
+		13371E8A241B6BDE0017CD62 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		13371E8B241B91EA0017CD62 /* UIView+MBPHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MBPHUD.m"; sourceTree = "<group>"; };
+		13371E8C241B91EA0017CD62 /* UIViewController+MBPHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MBPHUD.m"; sourceTree = "<group>"; };
+		13371E8D241B91EA0017CD62 /* UIView+MBPHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MBPHUD.h"; sourceTree = "<group>"; };
+		13371E8E241B91EA0017CD62 /* UIViewController+MBPHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MBPHUD.h"; sourceTree = "<group>"; };
 		1351A84923ED9DD000B0E9F6 /* SwiftCocoapodsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCocoapodsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1351A84C23ED9DD000B0E9F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1351A84E23ED9DD000B0E9F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +123,10 @@
 		13267F15240A18A0006A89EE /* ViewTool */ = {
 			isa = PBXGroup;
 			children = (
+				13371E8D241B91EA0017CD62 /* UIView+MBPHUD.h */,
+				13371E8B241B91EA0017CD62 /* UIView+MBPHUD.m */,
+				13371E8E241B91EA0017CD62 /* UIViewController+MBPHUD.h */,
+				13371E8C241B91EA0017CD62 /* UIViewController+MBPHUD.m */,
 				13267F16240A18B0006A89EE /* JSLabel.swift */,
 				13267F18240A27E9006A89EE /* JSButton.swift */,
 				13267F1A240A3014006A89EE /* JSImageView.swift */,
@@ -403,6 +414,7 @@
 				13BCCF622406902300E53E98 /* Macros.swift */,
 				13BCCF702406A55300E53E98 /* HttpTool.swift */,
 				13BCCF7D2407E87900E53E98 /* SwiftCocoapodsTest-Bridging-Header.h */,
+				13371E8A241B6BDE0017CD62 /* PrefixHeader.pch */,
 			);
 			path = Macros;
 			sourceTree = "<group>";
@@ -606,10 +618,12 @@
 				13BCCF5524068BF100E53E98 /* BaseViewController.swift in Sources */,
 				13BCCF712406A55300E53E98 /* HttpTool.swift in Sources */,
 				13BCCF5B24068C6C00E53E98 /* LiveViewController.swift in Sources */,
+				13371E90241B91EA0017CD62 /* UIViewController+MBPHUD.m in Sources */,
 				1351A84F23ED9DD000B0E9F6 /* ViewController.swift in Sources */,
 				13BCCF632406902300E53E98 /* Macros.swift in Sources */,
 				1351A84D23ED9DD000B0E9F6 /* AppDelegate.swift in Sources */,
 				13BCCF5124068B8E00E53E98 /* BaseNavViewController.swift in Sources */,
+				13371E8F241B91EA0017CD62 /* UIView+MBPHUD.m in Sources */,
 				13BCCF762406B5C900E53E98 /* HomeListModel.swift in Sources */,
 				13BCCF872407F9DB00E53E98 /* SwiftTableViewCell.swift in Sources */,
 				13BCCF5224068B8E00E53E98 /* BaseTabBarViewController.swift in Sources */,
@@ -797,7 +811,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D8P28FSQSM;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SwiftCocoapodsTest/Tool/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = SwiftCocoapodsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -820,7 +834,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D8P28FSQSM;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SwiftCocoapodsTest/Tool/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = SwiftCocoapodsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
