@@ -45,18 +45,7 @@ class HomeViewController: BaseViewController {
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             self.footerRefresh()
         })
-        
 
-        let addBlock : (Int,Int) -> Int = {
-            $0 > $1 ? $0 : $1
-        }
-        let a =  addBlock(2,4)
-        print("获取到的结果是:\(a)")
-        
-    }
-    
-    @objc func nextVC() -> Void {
-        
     }
     
     //懒加载数组
@@ -93,36 +82,46 @@ class HomeViewController: BaseViewController {
             self.showHUD()
         }
         let url = homeList
-        HttpTool.shareInstance.requestData(MethodType.get, urlString: url, parameters: ["page" : page as AnyObject], success: { (result) in
-//            WisdomHUD.dismiss()
+        HttpTool.share.getData(url: url, params: ["page" : page], success: { (result) in
+            print("获取到的数据是:%@",result)
             self.hideHUD()
             self.tableView.mj_header?.endRefreshing()
-            let dict = result["data"] as? [String : Any]
-//            let model = HomeListModel.deserialize(from: result as? Dictionary)
-            let jsonData = JSON(result)
-            let model = HomeListModel.init(jsonData:jsonData)
-            if page == 1 {
-                self.dataArray = model.items!
-            } else {
-                self.dataArray.append(contentsOf:model.items!)
-                self.tableView.mj_footer?.endRefreshing()
-                self.page += 1
-            }
+//            let dict  = result["data"] as? [String :Any]
+        
+//            let model = HomeListModel.
+        }) { (error) in
+        
+        }
+//        HttpTool.shareInstance.requestData(MethodType.get, urlString: url, parameters: ["page" : page as AnyObject], success: { (result) in
+////            WisdomHUD.dismiss()
+//            self.hideHUD()
+//            self.tableView.mj_header?.endRefreshing()
+//            let dict = result["data"] as? [String : Any]
+////            let model = HomeListModel.deserialize(from: result as? Dictionary)
+//            let jsonData = JSON(result)
+//            let model = HomeListModel.init(jsonData:jsonData)
 //            if page == 1 {
-//                self.dataArray = model!.items!
+//                self.dataArray = model.items!
 //            } else {
-//                self.dataArray.append(contentsOf: model!.items!)
+//                self.dataArray.append(contentsOf:model.items!)
 //                self.tableView.mj_footer?.endRefreshing()
 //                self.page += 1
 //            }
-//            self.showHUDMessage("加载成功")
-            self.tableView.reloadData()
-            print(result)
-        }) { (NSError) in
-            self.tableView.mj_header?.endRefreshing()
-            self.tableView.mj_footer?.endRefreshing()
-            print(NSError.error.debugDescription)
-        }
+////            if page == 1 {
+////                self.dataArray = model!.items!
+////            } else {
+////                self.dataArray.append(contentsOf: model!.items!)
+////                self.tableView.mj_footer?.endRefreshing()
+////                self.page += 1
+////            }
+////            self.showHUDMessage("加载成功")
+//            self.tableView.reloadData()
+//            print(result)
+//        }) { (NSError) in
+//            self.tableView.mj_header?.endRefreshing()
+//            self.tableView.mj_footer?.endRefreshing()
+//            print(NSError.error.debugDescription)
+//        }
     }
 }
 
