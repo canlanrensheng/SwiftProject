@@ -3,18 +3,15 @@ platform :ios, ‘8.0’
 
 target ‘SwiftCocoapodsTest’ do
 
-#试图布局
-pod 'SnapKit'
-#网络请求
-pod 'Alamofire', '~> 4.7'
-pod 'Moya'
-#字典转模型
-pod 'HandyJSON'
-pod 'MJRefresh'
+pod 'Alamofire'
+pod 'MJRefresh','~> 3.3.0'
 pod 'Kingfisher'
-pod 'SwiftyJSON'
+pod 'SwiftyJSON','~> 5.0.0'
 pod 'DZNEmptyDataSet'
-pod 'MBProgressHUD', '~> 1.1.0'
-
+pod 'MBProgressHUD','~> 1.1.0'
+pod 'ReachabilitySwift'
+pod 'IQKeyboardManagerSwift', '~> 6.5.5'
+pod 'SnapKit'
+pod 'KeychainAccess', '~> 4.1.0'
 
 end

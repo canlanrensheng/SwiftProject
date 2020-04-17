@@ -8,7 +8,7 @@
 
 import UIKit
 //import HandyJSON
-
+import Alamofire
 import Kingfisher
 import SwiftyJSON
 
@@ -31,7 +31,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "首页"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: self.publishButton)
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: self.publishButton)
         
         self.view.addSubview(self.tableView)
         self.headerRefresh()
@@ -78,21 +78,22 @@ class HomeViewController: BaseViewController {
     
     @objc func refreshData(page : NSInteger) -> Void {
         if page == 1 {
-//            WisdomHUD.showLoading()
             self.showHUD()
         }
         let url = homeList
-        HttpTool.share.getData(url: url, params: ["page" : page], success: { (result) in
-            print("获取到的数据是:%@",result)
+        let parameters = ["page" : page]
+        HttpTool.manager.requestData(method: .get, path: url, parameters: parameters, success: { (data) in
             self.hideHUD()
             self.tableView.mj_header?.endRefreshing()
-//            let dict  = result["data"] as? [String :Any]
-        
-//            let model = HomeListModel.
-        }) { (error) in
-        
+            self.tableView.mj_footer?.endRefreshing()
+            let dataDict  = data as! JSON
+            let model = HomeListModel.init(jsonData: dataDict)
+            
+        }) { (errorCode, errorDesc) in
+            self.showHUDMessage(errorDesc)
         }
-//        HttpTool.shareInstance.requestData(MethodType.get, urlString: url, parameters: ["page" : page as AnyObject], success: { (result) in
+       
+//        HttpTool.shareInstance.requestData(.get, urlString: url, parameters: ["page" : page as AnyObject], success: { (result) in
 ////            WisdomHUD.dismiss()
 //            self.hideHUD()
 //            self.tableView.mj_header?.endRefreshing()
@@ -134,10 +135,10 @@ extension HomeViewController :UITableViewDataSource{
         let cell : SwiftTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SwiftTableViewCell", for: indexPath) as! SwiftTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none;
         if indexPath.row < self.dataArray.count {
-            let model : ActivityModel = (self.dataArray[indexPath.row] as? ActivityModel)!
-            cell.nameLabel.text = model.state
-            cell.contentLabel.text = model.content
-            cell.iconImageView.kf.setImage(with: URL(string: model.origin_url), placeholder:nil, options: nil, progressBlock: nil, completionHandler: nil)
+//            let model  = (self.dataArray[indexPath.row] as? ActivityModel)!
+//            cell.nameLabel.text = model.state
+//            cell.contentLabel.text = model.content
+//            cell.iconImageView.kf.setImage(with: URL(string: model.origin_url), placeholder:nil, options: nil, progressBlock: nil, completionHandler: nil)
         }
         return cell
     }

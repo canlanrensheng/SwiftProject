@@ -20,6 +20,8 @@
 		1351A85723ED9DD200B0E9F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1351A85523ED9DD200B0E9F6 /* LaunchScreen.storyboard */; };
 		1351A86223ED9DD200B0E9F6 /* SwiftCocoapodsTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351A86123ED9DD200B0E9F6 /* SwiftCocoapodsTestTests.swift */; };
 		1351A86D23ED9DD200B0E9F6 /* SwiftCocoapodsTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351A86C23ED9DD200B0E9F6 /* SwiftCocoapodsTestUITests.swift */; };
+		136A83382449980C00C3D0A7 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A83372449980C00C3D0A7 /* UserInfoManager.swift */; };
+		136A833A2449996700C3D0A7 /* BaseHttpUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A83392449996700C3D0A7 /* BaseHttpUrl.swift */; };
 		13BCCF5124068B8E00E53E98 /* BaseNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BCCF4E24068B8E00E53E98 /* BaseNavViewController.swift */; };
 		13BCCF5224068B8E00E53E98 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BCCF5024068B8E00E53E98 /* BaseTabBarViewController.swift */; };
 		13BCCF5524068BF100E53E98 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BCCF5424068BF100E53E98 /* BaseViewController.swift */; };
@@ -77,6 +79,8 @@
 		1351A86823ED9DD200B0E9F6 /* SwiftCocoapodsTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCocoapodsTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1351A86C23ED9DD200B0E9F6 /* SwiftCocoapodsTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCocoapodsTestUITests.swift; sourceTree = "<group>"; };
 		1351A86E23ED9DD200B0E9F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		136A83372449980C00C3D0A7 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
+		136A83392449996700C3D0A7 /* BaseHttpUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHttpUrl.swift; sourceTree = "<group>"; };
 		13BCCF4E24068B8E00E53E98 /* BaseNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavViewController.swift; sourceTree = "<group>"; };
 		13BCCF5024068B8E00E53E98 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		13BCCF5424068BF100E53E98 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +194,14 @@
 				1351A86E23ED9DD200B0E9F6 /* Info.plist */,
 			);
 			path = SwiftCocoapodsTestUITests;
+			sourceTree = "<group>";
+		};
+		136A8336244997E800C3D0A7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				136A83372449980C00C3D0A7 /* UserInfoManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		13BCCF3724068B3400E53E98 /* Business */ = {
@@ -369,6 +381,7 @@
 		13BCCF4C24068B8E00E53E98 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				136A8336244997E800C3D0A7 /* Manager */,
 				13267F15240A18A0006A89EE /* ViewTool */,
 				13BCCF602406900700E53E98 /* ApiUrl */,
 				13BCCF612406900700E53E98 /* Macros */,
@@ -407,6 +420,7 @@
 			isa = PBXGroup;
 			children = (
 				13BCCF882407FC0F00E53E98 /* Api.swift */,
+				136A83392449996700C3D0A7 /* BaseHttpUrl.swift */,
 			);
 			path = ApiUrl;
 			sourceTree = "<group>";
@@ -616,6 +630,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13BCCF5924068C4200E53E98 /* CircleViewController.swift in Sources */,
+				136A83382449980C00C3D0A7 /* UserInfoManager.swift in Sources */,
 				13BCCF5D24068C9900E53E98 /* MessageViewController.swift in Sources */,
 				13267F19240A27E9006A89EE /* JSButton.swift in Sources */,
 				13BCCF5524068BF100E53E98 /* BaseViewController.swift in Sources */,
@@ -635,6 +650,7 @@
 				13BCCF5724068C1600E53E98 /* HomeViewController.swift in Sources */,
 				13267F17240A18B0006A89EE /* JSLabel.swift in Sources */,
 				13BCCF7E2407E87900E53E98 /* SwiftCocoapodsTest-Bridging-Header.h in Sources */,
+				136A833A2449996700C3D0A7 /* BaseHttpUrl.swift in Sources */,
 				13BCCF892407FC0F00E53E98 /* Api.swift in Sources */,
 				13BCCF5F24068CBC00E53E98 /* MineViewController.swift in Sources */,
 			);

@@ -8,5 +8,5 @@
 //
 
 import Foundation
-
-let homeList = "http://m2.qiushibaike.com/article/list/imgrank"
+//let baseAPI = BaseHttpUrl()
+let homeList = "app/home/menus/group.do"
