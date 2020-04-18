@@ -12,19 +12,35 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if self.navigationController != nil {
+            let navBarHairlineImageView = self.findHairlineImageViewUnder(sView: self.navigationController!.navigationBar)
+            navBarHairlineImageView.isHidden = true
+        }
     }
-    */
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.navigationController != nil {
+            let navBarHairlineImageView = self.findHairlineImageViewUnder(sView: self.navigationController!.navigationBar)
+            navBarHairlineImageView.isHidden = false
+        }
+    }
+    
+    func findHairlineImageViewUnder(sView: UIView) ->UIImageView {
+        if sView.isKind(of: UIImageView.self) && sView.bounds.height <= 1 {
+            return sView as! UIImageView
+        }
+        for sview in sView.subviews {
+            let imgs = self.findHairlineImageViewUnder(sView: sview)
+            if imgs.isKind(of: UIImageView.self) && imgs.bounds.height <= 1 {
+                return imgs
+            }
+        }
+        return UIImageView.init()
+    }
 
 }

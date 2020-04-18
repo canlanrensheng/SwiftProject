@@ -20,11 +20,9 @@ class BaseTabBarViewController: UITabBarController {
         self.tabBar.isTranslucent = false
         self.tabBar.barTintColor = .white
         //设置tabar默认的字体的颜色
-     UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : HexColor(rgbValue: 0x979797)], for: UIControl.State.normal)
-        
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : HexColor(0x979797)], for: UIControl.State.normal)
         //设置tabbar 选中的字体的颜色
-     UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : ThemeColor], for: UIControl.State.selected)
-        
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : ThemeColor], for: UIControl.State.selected)
     }
     
     func addChildVC(childVC : UIViewController,title:String,normalImageName : String,selectImageName : String) -> Void {

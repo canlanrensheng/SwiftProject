@@ -11,62 +11,59 @@ import UIKit
 import Alamofire
 import Kingfisher
 import SwiftyJSON
+import SnapKit
 
 typealias AddNumber = (Int,Int) -> Void
 
-class HomeViewController: BaseViewController {
-    
-    var publishButton : UIButton = {
-        let button = JSButton.createButton(frame: CGRect(x: 0, y: 0, width: 50, height: 30), imageName: "ic_publish") {
-            
-        }
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14.0)
-        button.setTitle("发布", for: UIControl.State.normal)
-        button.setTitleColor(HexColor(rgbValue: 0x333333), for: UIControl.State.normal)
-        button.setButtonWithEdgeInsetsStyle(edgeStyle: ButtonLayoutStyle.ButtonLayoutStyleImagePositionRight, space: 10)
-        return button
-    }()
-    
+class HomeViewController: BaseViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+   
+    var recommondModel : RecommendList?
     var page = 1
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationItem.title = "首页"
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: self.publishButton)
-        
-        self.view.addSubview(self.tableView)
-        self.headerRefresh()
-        
-        //下拉刷新
-        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
-            self.headerRefresh();
-        })
-        
-        //上拉加载
-        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-            self.footerRefresh()
-        })
-
-    }
-    
     //懒加载数组
     lazy var dataArray : Array<Any> = {
         var array = Array<Any>()
         return array
     }()
     
-    //懒加载tableView
-    lazy var tableView : UITableView = {
-        let tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: (KScreenHeight - 49 - 64)), style: UITableView.Style.plain)
-        tableView.register(SwiftTableViewCell.classForCoder(), forCellReuseIdentifier: "SwiftTableViewCell")
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.emptyDataSetSource = self
-        tableView.emptyDataSetDelegate = self
-        tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none;
-        return tableView
+    lazy var collectionView : UICollectionView = {
+        let layout = UICollectionViewFlowLayout.init()
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 5
+        layout.itemSize = CGSize(width: (self.view.frame.size.width - 24 - 5) / 2.0, height: 171 + 78.5)
+        layout.sectionInset = UIEdgeInsets.init(top: 5, left: 12, bottom: 8, right: 12)
+        var collectionView = UICollectionView.init(frame:CGRect(x: 0, y: 0, width: 0, height: 0) , collectionViewLayout: layout)
+        collectionView.register(HomeGoodCollectionViewCell.self, forCellWithReuseIdentifier: "HomeGoodCollectionViewCell")
+        collectionView.register(HomeCollectionSectionHeaderView.self, forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader, withReuseIdentifier: NSStringFromClass(HomeCollectionSectionHeaderView.self))
+        collectionView.register(HomeCollectionSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footer")
+        collectionView.backgroundColor = UIColor.init(red: 242 / 255.0, green: 244 / 255.0, blue: 246 / 255.0, alpha: 1.0)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        return collectionView
     }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.title = "首页"
+        self.view.addSubview(self.collectionView)
+        self.collectionView.snp_makeConstraints { (make) in
+            make.edges.equalTo(self.view)
+        }
+        self.headerRefresh()
+        
+        //下拉刷新
+        self.collectionView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            self.headerRefresh();
+        })
+        
+        //上拉加载
+        self.collectionView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+            self.footerRefresh()
+        })
+
+        self.collectionView.mj_footer?.isHidden = true
+    }
+    
+  
 
     @objc func headerRefresh() -> Void {
         self.refreshData(page: 1)
@@ -82,91 +79,106 @@ class HomeViewController: BaseViewController {
         }
         let url = homeList
         let parameters = ["page" : page]
-        HttpTool.manager.requestData(method: .get, path: url, parameters: parameters, success: { (data) in
-            self.hideHUD()
-            self.tableView.mj_header?.endRefreshing()
-            self.tableView.mj_footer?.endRefreshing()
-            let dataDict  = data as! JSON
-            let model = HomeListModel.init(jsonData: dataDict)
-            
-        }) { (errorCode, errorDesc) in
-            self.showHUDMessage(errorDesc)
+        DispatchQueue.global().async {
+            HttpTool.manager.requestData(method: .get, path: url, parameters: parameters, success: { (data) in
+                self.hideHUD()
+                self.collectionView.mj_header?.endRefreshing()
+                self.collectionView.mj_footer?.endRefreshing()
+                let dataDict  = data as! JSON
+                let model = HomeListModel.init(jsonData: dataDict)
+                self.dataArray = model.recommendList
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
+            }) { (errorCode, errorDesc) in
+                self.showHUDMessage(errorDesc)
+            }
         }
        
-//        HttpTool.shareInstance.requestData(.get, urlString: url, parameters: ["page" : page as AnyObject], success: { (result) in
-////            WisdomHUD.dismiss()
-//            self.hideHUD()
-//            self.tableView.mj_header?.endRefreshing()
-//            let dict = result["data"] as? [String : Any]
-////            let model = HomeListModel.deserialize(from: result as? Dictionary)
-//            let jsonData = JSON(result)
-//            let model = HomeListModel.init(jsonData:jsonData)
-//            if page == 1 {
-//                self.dataArray = model.items!
-//            } else {
-//                self.dataArray.append(contentsOf:model.items!)
-//                self.tableView.mj_footer?.endRefreshing()
-//                self.page += 1
-//            }
-////            if page == 1 {
-////                self.dataArray = model!.items!
-////            } else {
-////                self.dataArray.append(contentsOf: model!.items!)
-////                self.tableView.mj_footer?.endRefreshing()
-////                self.page += 1
-////            }
-////            self.showHUDMessage("加载成功")
-//            self.tableView.reloadData()
-//            print(result)
-//        }) { (NSError) in
-//            self.tableView.mj_header?.endRefreshing()
-//            self.tableView.mj_footer?.endRefreshing()
-//            print(NSError.error.debugDescription)
-//        }
+        
     }
-}
-
-extension HomeViewController :UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.tableView.mj_footer!.isHidden = self.dataArray.count == 0
+    
+ 
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return self.dataArray.count
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : SwiftTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SwiftTableViewCell", for: indexPath) as! SwiftTableViewCell
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none;
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell : HomeGoodCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeGoodCollectionViewCell", for: indexPath) as! HomeGoodCollectionViewCell
         if indexPath.row < self.dataArray.count {
-//            let model  = (self.dataArray[indexPath.row] as? ActivityModel)!
-//            cell.nameLabel.text = model.state
-//            cell.contentLabel.text = model.content
-//            cell.iconImageView.kf.setImage(with: URL(string: model.origin_url), placeholder:nil, options: nil, progressBlock: nil, completionHandler: nil)
+            cell.loadData(model: self.dataArray[indexPath.row] as! RecommendList)
         }
         return cell
     }
-}
-
-extension HomeViewController :UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+//    //每个分区的内边距
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//    }
+//
+//    //最小行间距
+//   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//       return 10;
+//    }
+    
+//    //item 的尺寸
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: KScreenWidth / 4.0 - 50 / 4.0, height: KScreenHeight / 4.0 - 50 / 4.0)
+//    }
+    //每个分区区头尺寸
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize (width: KScreenWidth, height: 40)
+    }
+    
+    //返回区尾视图的方法
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+         return CGSize(width: KScreenWidth, height: 40)
+    }
+    
+    //返回区头、区尾实例
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            var headview = HomeCollectionSectionHeaderView();
+            headview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NSStringFromClass(HomeCollectionSectionHeaderView.self), for: indexPath as IndexPath) as! HomeCollectionSectionHeaderView;
+            return headview
+        } else {
+            var footer = HomeCollectionSectionHeaderView()
+            footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "footer", for: indexPath) as! HomeCollectionSectionHeaderView
+            return footer
+        }
+   }
+    
+    //item 对应的点击事件
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("index is \(indexPath.row)");
         
     }
 }
 
+
 extension HomeViewController :DZNEmptyDataSetSource {
-    
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let text = "暂无数据"
-        let attributes = [NSAttributedString.Key.font: RegularFont(size: 15), NSAttributedString.Key.foregroundColor: TextColor]
+        let attributes = [NSAttributedString.Key.font: RegularFont(15), NSAttributedString.Key.foregroundColor: TextColor]
         return NSAttributedString(string: text, attributes: attributes)
     }
-    
+
     func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
         return tableViewBackGroundColor
     }
-    
+
     func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
         let image = UIImage(named: "img_empty_news")
         return image
     }
-    
+
     func spaceHeight(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
         return 10
     }

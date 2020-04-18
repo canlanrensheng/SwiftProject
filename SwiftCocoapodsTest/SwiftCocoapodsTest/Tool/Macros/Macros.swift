@@ -38,22 +38,22 @@ let kTabBarHeight = (isFullScreen ? 83 : 49);
 let iphone6Plus =  (UIScreen.instancesRespond(to: #selector(getter: UIScreen.main.currentMode)) ? CGSize(width: 1242, height: 2208).equalTo((UIScreen.main.currentMode?.size)!) : false)
 
 //图片
-func kImageName(name : String) -> UIImage {
+func kImageName(_ name : String) -> UIImage {
     return UIImage.init(named: name)!
 }
 
 //Regular  字体
-func RegularFont(size : CGFloat) -> UIFont {
+func RegularFont(_ size : CGFloat) -> UIFont {
     return UIFont.init(name: "PingFangSC-Regular", size: size)!
 }
 
 //Medium 字体
-func MediumFont(size : CGFloat) -> UIFont {
+func MediumFont(_ size : CGFloat) -> UIFont {
     return UIFont.init(name: "PingFangSC-Medium", size: size)!
 }
 
 //RGB色值
-func HexColor(rgbValue : NSInteger) -> UIColor {
+func HexColor(_ rgbValue : NSInteger) -> UIColor {
     return UIColor(red: ((CGFloat)((rgbValue & 0xFF0000) >> 16)) / 255.0,green: ((CGFloat)((rgbValue & 0xFF00) >> 8)) / 255.0, blue: ((CGFloat)(rgbValue & 0xFF)) / 255.0,alpha: 1.0)
 }
 
@@ -63,7 +63,7 @@ func HexColorAlpha(rgbValue : NSInteger,alpha : CGFloat) -> UIColor {
 }
 
 //项目主题颜色
-let ThemeColor = HexColor(rgbValue: 0xDB1919)
+let ThemeColor = HexColor(0xDB1919)
 //白色
 let whiteColor = UIColor.white
 //黑色
@@ -73,10 +73,10 @@ let orangeColor = UIColor.orange
 //蓝色
 let blueColor = UIColor.blue
 //0x333333
-let TextColor = HexColor(rgbValue: 0x333333)
+let TextColor = HexColor(0x333333)
 //0x999999
-let lightTextColor = HexColor(rgbValue:0x999999)
+let lightTextColor = HexColor(0x999999)
 //tableViewBackgroundColor
-let tableViewBackGroundColor = HexColor(rgbValue:0xf5f5f5)
+let tableViewBackGroundColor = HexColor(0xf5f5f5)
 
 

@@ -1,36 +1,38 @@
 //
-//  JSTextField.swift
+//  UITextField+Extention.swift
 //  SwiftCocoapodsTest
 //
-//  Created by 张金山 on 2020/3/14.
+//  Created by 张金山 on 2020/4/18.
 //  Copyright © 2020 张金山. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-//typealias textFeildChageBlock = (_ text : String) -> ()
+//var textChageBlock : (_ text : String) ->() = {
+//    (_ text : String) ->() in
+//}
 
-var textChageBlock : (_ text : String) -> ()  = {(text : String) in }
+typealias textBlock =  (_ text : String) -> ()
+var textChageBlock : textBlock!
 
-class JSTextField: UIView,UITextFieldDelegate {
-    
+extension UITextField : UITextFieldDelegate {
     /*
-    placeHoder : placeHoder
-    placeHoderColor : placeHoderColor
-    backgroundColor : backgroundColor
-    */
+     placeHoder : placeHoder
+     placeHoderColor : placeHoderColor
+     backgroundColor : backgroundColor
+     */
     func createtextFeild(placeHoder : String,placeHoderColor : UIColor,backgroundColor : UIColor,block : @escaping (_ text : String)->()) -> UITextField {
-      let textFeild = UITextField.init()
-      textFeild.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-      textFeild.delegate = self
-      textFeild.placeholder = placeHoder;
-      textFeild.backgroundColor = backgroundColor
-      textFeild.attributedPlaceholder = NSAttributedString.init(string: placeHoder, attributes: [NSMutableAttributedString.Key.foregroundColor : placeHoderColor])
-      textChageBlock = block
-      return textFeild
+        let textFeild = UITextField.init()
+        textFeild.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        textFeild.delegate = self
+        textFeild.placeholder = placeHoder;
+        textFeild.backgroundColor = backgroundColor
+        textFeild.attributedPlaceholder = NSAttributedString.init(string: placeHoder, attributes: [NSMutableAttributedString.Key.foregroundColor : placeHoderColor])
+        textChageBlock = block
+        return textFeild
     }
     
-
+    
     /*
      frame : frame
      placeHoder : placeHoder

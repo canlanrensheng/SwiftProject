@@ -12,17 +12,17 @@ import SnapKit
 class SwiftTableViewCell: UITableViewCell {
     
     var iconImageView : UIImageView = {
-        return JSImageView.createImageView(imageName: "", backgroundColor: tableViewBackGroundColor)
+        return UIImageView.createImageView(imageName: "", backgroundColor: tableViewBackGroundColor)
     }()
     var nameLabel : UILabel = {
-        return JSLabel.createLabel(text: "", textColor: blackColor, textAlignment: NSTextAlignment.left, font:RegularFont(size: 14), backgroundColor: UIColor.clear)
+        return UILabel.createLabel(text: "", textColor: blackColor, textAlignment: NSTextAlignment.left, font:RegularFont(14), backgroundColor: UIColor.clear)
     }()
     var contentLabel : UILabel = {
-        return JSLabel.createLabel(text: "", textColor: TextColor, textAlignment: NSTextAlignment.left, font: RegularFont(size: 14), backgroundColor: UIColor.clear)
+        return UILabel.createLabel(text: "", textColor: TextColor, textAlignment: NSTextAlignment.left, font: RegularFont(14), backgroundColor: UIColor.clear)
     }()
     
     var publishButton : UIButton = {
-        return JSButton.createButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0), title: "发布", titleColor: UIColor.red, font: UIFont.systemFont(ofSize: 14), backgroundColor: UIColor.clear) {
+        return UIButton.createButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0), title: "发布", titleColor: UIColor.red, font: UIFont.systemFont(ofSize: 14), backgroundColor: UIColor.clear) {
              print("我被点击了")
         }
     }()
@@ -65,6 +65,9 @@ class SwiftTableViewCell: UITableViewCell {
             make.centerY.equalTo(self.contentView)
             make.size.equalTo(CGSize(width: 40, height: 20))
         }
-
      }
+    
+    func loadData(model : RecommendList) {
+       
+    }
 }

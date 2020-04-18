@@ -1,30 +1,29 @@
 //
-//  JSImageView.swift
+//  UIImageView+Extention.swift
 //  SwiftCocoapodsTest
 //
-//  Created by 张金山 on 2020/2/29.
+//  Created by 张金山 on 2020/4/18.
 //  Copyright © 2020 张金山. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class JSImageView: UIImageView {
-    
+extension UIImageView {
     /*
-    imageName : imageName
-    */
+     imageName : imageName
+     */
     class func createImageView(imageName : String) -> UIImageView {
         return createImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), imageName: imageName, backgroundColor: UIColor.clear)
     }
     
     /*
-    imageName : imageName
-    backGroundColor : backGroundColor
-    */
+     imageName : imageName
+     backGroundColor : backGroundColor
+     */
     class func createImageView(imageName : String,backgroundColor : UIColor) -> UIImageView {
         return createImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), imageName: imageName, backgroundColor: backgroundColor)
     }
-  
+    
     /*
      frame : frame
      imageName : imageName
@@ -36,5 +35,4 @@ class JSImageView: UIImageView {
         imageView.image = UIImage(named: imageName)
         return imageView
     }
-   
 }
