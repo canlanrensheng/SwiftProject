@@ -68,6 +68,7 @@ class SwiftTableViewCell: UITableViewCell {
      }
     
     func loadData(model : RecommendList) {
-       
+        var string : String = String()
+        
     }
 }

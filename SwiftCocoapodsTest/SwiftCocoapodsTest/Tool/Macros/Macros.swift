@@ -63,7 +63,7 @@ func HexColorAlpha(rgbValue : NSInteger,alpha : CGFloat) -> UIColor {
 }
 
 //项目主题颜色
-let ThemeColor = HexColor(0xDB1919)
+let MainColor = HexColor(0xDB1919)
 //白色
 let whiteColor = UIColor.white
 //黑色

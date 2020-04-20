@@ -208,4 +208,15 @@ extension UIView {
         toView.layer.shadowPath = path.cgPath;
     }
 
+    
+    /// 获取当前view快照
+    func screenshot() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, 0)
+        defer {
+            UIGraphicsEndImageContext()
+        }
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        layer.render(in: context)
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
 }

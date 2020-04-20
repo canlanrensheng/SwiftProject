@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1320C995244D38040050D462 /* UIColor+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320C994244D38030050D462 /* UIColor+Extention.swift */; };
+		1320C997244D3CD90050D462 /* UINAvigationController+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320C996244D3CD90050D462 /* UINAvigationController+Extention.swift */; };
+		1320C999244D3D1A0050D462 /* UIScrollView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320C998244D3D1A0050D462 /* UIScrollView+Extention.swift */; };
+		1320C99B244D710F0050D462 /* JSDateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320C99A244D710F0050D462 /* JSDateTool.swift */; };
 		13371E8F241B91EA0017CD62 /* UIView+MBPHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 13371E8B241B91EA0017CD62 /* UIView+MBPHUD.m */; };
 		13371E90241B91EA0017CD62 /* UIViewController+MBPHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 13371E8C241B91EA0017CD62 /* UIViewController+MBPHUD.m */; };
 		1350917B244AA0FC00BCDEC8 /* HomeGoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350917A244AA0FC00BCDEC8 /* HomeGoodCollectionViewCell.swift */; };
@@ -29,6 +33,8 @@
 		1384AA0B244AF954007DF4C6 /* BaseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1384AA0A244AF954007DF4C6 /* BaseCollectionReusableView.swift */; };
 		1384AA0D244AF985007DF4C6 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1384AA0C244AF985007DF4C6 /* BaseCollectionViewCell.swift */; };
 		1384AA0F244AFB9C007DF4C6 /* UIView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1384AA0E244AFB9C007DF4C6 /* UIView+Extention.swift */; };
+		1384AA11244B02C7007DF4C6 /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1384AA10244B02C7007DF4C6 /* String+Extention.swift */; };
+		1384AA13244B076B007DF4C6 /* UIImage+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1384AA12244B076B007DF4C6 /* UIImage+Extention.swift */; };
 		13BCCF5124068B8E00E53E98 /* BaseNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BCCF4E24068B8E00E53E98 /* BaseNavViewController.swift */; };
 		13BCCF5224068B8E00E53E98 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BCCF5024068B8E00E53E98 /* BaseTabBarViewController.swift */; };
 		13BCCF5524068BF100E53E98 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BCCF5424068BF100E53E98 /* BaseViewController.swift */; };
@@ -64,6 +70,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1320C994244D38030050D462 /* UIColor+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extention.swift"; sourceTree = "<group>"; };
+		1320C996244D3CD90050D462 /* UINAvigationController+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINAvigationController+Extention.swift"; sourceTree = "<group>"; };
+		1320C998244D3D1A0050D462 /* UIScrollView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extention.swift"; sourceTree = "<group>"; };
+		1320C99A244D710F0050D462 /* JSDateTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSDateTool.swift; sourceTree = "<group>"; };
 		13371E8A241B6BDE0017CD62 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		13371E8B241B91EA0017CD62 /* UIView+MBPHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MBPHUD.m"; sourceTree = "<group>"; };
 		13371E8C241B91EA0017CD62 /* UIViewController+MBPHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MBPHUD.m"; sourceTree = "<group>"; };
@@ -95,6 +105,8 @@
 		1384AA0A244AF954007DF4C6 /* BaseCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionReusableView.swift; sourceTree = "<group>"; };
 		1384AA0C244AF985007DF4C6 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		1384AA0E244AFB9C007DF4C6 /* UIView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extention.swift"; sourceTree = "<group>"; };
+		1384AA10244B02C7007DF4C6 /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
+		1384AA12244B076B007DF4C6 /* UIImage+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extention.swift"; sourceTree = "<group>"; };
 		13BCCF4E24068B8E00E53E98 /* BaseNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavViewController.swift; sourceTree = "<group>"; };
 		13BCCF5024068B8E00E53E98 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		13BCCF5424068BF100E53E98 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +168,12 @@
 				1384AA0A244AF954007DF4C6 /* BaseCollectionReusableView.swift */,
 				1384AA0C244AF985007DF4C6 /* BaseCollectionViewCell.swift */,
 				1384AA0E244AFB9C007DF4C6 /* UIView+Extention.swift */,
+				1384AA10244B02C7007DF4C6 /* String+Extention.swift */,
+				1384AA12244B076B007DF4C6 /* UIImage+Extention.swift */,
+				1320C994244D38030050D462 /* UIColor+Extention.swift */,
+				1320C996244D3CD90050D462 /* UINAvigationController+Extention.swift */,
+				1320C998244D3D1A0050D462 /* UIScrollView+Extention.swift */,
+				1320C99A244D710F0050D462 /* JSDateTool.swift */,
 			);
 			path = ViewTool;
 			sourceTree = "<group>";
@@ -653,7 +671,9 @@
 				1384A9FB244ACB69007DF4C6 /* HomeCollectionSectionHeaderView.swift in Sources */,
 				13BCCF5924068C4200E53E98 /* CircleViewController.swift in Sources */,
 				136A83382449980C00C3D0A7 /* UserInfoManager.swift in Sources */,
+				1384AA13244B076B007DF4C6 /* UIImage+Extention.swift in Sources */,
 				13BCCF5D24068C9900E53E98 /* MessageViewController.swift in Sources */,
+				1320C99B244D710F0050D462 /* JSDateTool.swift in Sources */,
 				1384AA09244AE638007DF4C6 /* BaseTableViewCell.swift in Sources */,
 				1384AA0D244AF985007DF4C6 /* BaseCollectionViewCell.swift in Sources */,
 				13BCCF5524068BF100E53E98 /* BaseViewController.swift in Sources */,
@@ -661,12 +681,15 @@
 				1384AA07244AE50F007DF4C6 /* BaseView.swift in Sources */,
 				13BCCF5B24068C6C00E53E98 /* LiveViewController.swift in Sources */,
 				1384A9FD244ADEC4007DF4C6 /* UILabel+Extention.swift in Sources */,
+				1320C995244D38040050D462 /* UIColor+Extention.swift in Sources */,
 				13371E90241B91EA0017CD62 /* UIViewController+MBPHUD.m in Sources */,
 				1351A84F23ED9DD000B0E9F6 /* ViewController.swift in Sources */,
 				1384AA03244AE298007DF4C6 /* UIImageView+Extention.swift in Sources */,
 				13BCCF632406902300E53E98 /* Macros.swift in Sources */,
 				1351A84D23ED9DD000B0E9F6 /* AppDelegate.swift in Sources */,
 				1350917B244AA0FC00BCDEC8 /* HomeGoodCollectionViewCell.swift in Sources */,
+				1320C997244D3CD90050D462 /* UINAvigationController+Extention.swift in Sources */,
+				1384AA11244B02C7007DF4C6 /* String+Extention.swift in Sources */,
 				13BCCF5124068B8E00E53E98 /* BaseNavViewController.swift in Sources */,
 				13371E8F241B91EA0017CD62 /* UIView+MBPHUD.m in Sources */,
 				13BCCF762406B5C900E53E98 /* HomeListModel.swift in Sources */,
@@ -674,6 +697,7 @@
 				13BCCF5224068B8E00E53E98 /* BaseTabBarViewController.swift in Sources */,
 				13BCCF5724068C1600E53E98 /* HomeViewController.swift in Sources */,
 				1384A9FF244ADF94007DF4C6 /* UIButton+Extention.swift in Sources */,
+				1320C999244D3D1A0050D462 /* UIScrollView+Extention.swift in Sources */,
 				1384AA0B244AF954007DF4C6 /* BaseCollectionReusableView.swift in Sources */,
 				13BCCF7E2407E87900E53E98 /* SwiftCocoapodsTest-Bridging-Header.h in Sources */,
 				136A833A2449996700C3D0A7 /* BaseHttpUrl.swift in Sources */,
