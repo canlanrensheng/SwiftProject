@@ -20,7 +20,7 @@ func getTimeStringWithDate(date : Date) -> String {
 
 //时间戳转字符串
 func getTimeStringWithTimeStamp(timeStamp : String) -> String {
-    let date : Date = Date.init(timeIntervalSince1970: TimeInterval(timeStamp.doubleValue() / 1000))
+    let date : Date = Date.init(timeIntervalSince1970: TimeInterval(timeStamp.doubleValue / 1000))
     let dateFormat : DateFormatter = DateFormatter.init()
     dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
     let dateStr : String = dateFormat.string(from: date as Date)

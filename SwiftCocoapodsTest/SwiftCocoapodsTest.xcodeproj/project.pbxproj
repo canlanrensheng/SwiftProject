@@ -11,6 +11,8 @@
 		1320C997244D3CD90050D462 /* UINAvigationController+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320C996244D3CD90050D462 /* UINAvigationController+Extention.swift */; };
 		1320C999244D3D1A0050D462 /* UIScrollView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320C998244D3D1A0050D462 /* UIScrollView+Extention.swift */; };
 		1320C99B244D710F0050D462 /* JSDateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320C99A244D710F0050D462 /* JSDateTool.swift */; };
+		1320C99F244E8A780050D462 /* CALayer+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320C99E244E8A780050D462 /* CALayer+Extention.swift */; };
+		1320C9A1244E8B280050D462 /* AppInfoTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320C9A0244E8B280050D462 /* AppInfoTool.swift */; };
 		13371E8F241B91EA0017CD62 /* UIView+MBPHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 13371E8B241B91EA0017CD62 /* UIView+MBPHUD.m */; };
 		13371E90241B91EA0017CD62 /* UIViewController+MBPHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 13371E8C241B91EA0017CD62 /* UIViewController+MBPHUD.m */; };
 		1350917B244AA0FC00BCDEC8 /* HomeGoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350917A244AA0FC00BCDEC8 /* HomeGoodCollectionViewCell.swift */; };
@@ -74,6 +76,8 @@
 		1320C996244D3CD90050D462 /* UINAvigationController+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINAvigationController+Extention.swift"; sourceTree = "<group>"; };
 		1320C998244D3D1A0050D462 /* UIScrollView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extention.swift"; sourceTree = "<group>"; };
 		1320C99A244D710F0050D462 /* JSDateTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSDateTool.swift; sourceTree = "<group>"; };
+		1320C99E244E8A780050D462 /* CALayer+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extention.swift"; sourceTree = "<group>"; };
+		1320C9A0244E8B280050D462 /* AppInfoTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoTool.swift; sourceTree = "<group>"; };
 		13371E8A241B6BDE0017CD62 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		13371E8B241B91EA0017CD62 /* UIView+MBPHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MBPHUD.m"; sourceTree = "<group>"; };
 		13371E8C241B91EA0017CD62 /* UIViewController+MBPHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MBPHUD.m"; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				1320C996244D3CD90050D462 /* UINAvigationController+Extention.swift */,
 				1320C998244D3D1A0050D462 /* UIScrollView+Extention.swift */,
 				1320C99A244D710F0050D462 /* JSDateTool.swift */,
+				1320C99E244E8A780050D462 /* CALayer+Extention.swift */,
+				1320C9A0244E8B280050D462 /* AppInfoTool.swift */,
 			);
 			path = ViewTool;
 			sourceTree = "<group>";
@@ -678,6 +684,7 @@
 				1384AA0D244AF985007DF4C6 /* BaseCollectionViewCell.swift in Sources */,
 				13BCCF5524068BF100E53E98 /* BaseViewController.swift in Sources */,
 				13BCCF712406A55300E53E98 /* HttpTool.swift in Sources */,
+				1320C99F244E8A780050D462 /* CALayer+Extention.swift in Sources */,
 				1384AA07244AE50F007DF4C6 /* BaseView.swift in Sources */,
 				13BCCF5B24068C6C00E53E98 /* LiveViewController.swift in Sources */,
 				1384A9FD244ADEC4007DF4C6 /* UILabel+Extention.swift in Sources */,
@@ -686,6 +693,7 @@
 				1351A84F23ED9DD000B0E9F6 /* ViewController.swift in Sources */,
 				1384AA03244AE298007DF4C6 /* UIImageView+Extention.swift in Sources */,
 				13BCCF632406902300E53E98 /* Macros.swift in Sources */,
+				1320C9A1244E8B280050D462 /* AppInfoTool.swift in Sources */,
 				1351A84D23ED9DD000B0E9F6 /* AppDelegate.swift in Sources */,
 				1350917B244AA0FC00BCDEC8 /* HomeGoodCollectionViewCell.swift in Sources */,
 				1320C997244D3CD90050D462 /* UINAvigationController+Extention.swift in Sources */,
